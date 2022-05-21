@@ -75,9 +75,9 @@ app.post("/blog/create", (req, res) => {
 
 ////全記事読み込み
 app.get("/", async(req, res) => {
-    const allBlogs = await BlogModel.find();
-    res.render("index",{allBlogs:allBlogs, session:req.session.userId});
-});
+    const allBlogs = await BlogModel.find()
+    res.render("index",{allBlogs:allBlogs, session:req.session.userId})
+})
 
 ////単記事読み込み
 app.get("/blog/:id", async(req, res) => {
