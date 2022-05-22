@@ -10,5 +10,4 @@ const BlogSchema = new Schema({
 });
 
 const BlogModel = mongoose.model("Blog", BlogSchema);
-console.log("call?bogjs");
 module.exports = BlogModel

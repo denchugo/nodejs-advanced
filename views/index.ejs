@@ -1,4 +1,6 @@
-  <!DOCTYPE html>
+<%# index.ejs %>
+
+<!DOCTYPE html>
   <html lang="ja">
 
   <head>
@@ -10,17 +12,17 @@
     <%- include("./header"); %>
       <main>
         <div class="grid-container">
-          <% allBlogs.forEach((blog) => { %>
+          <% allBlogs.forEach((blog)=> { %>
             <div class="card">
-              <a href="blog/<%= blog._id %>">
-                <img src="/public/images<%= blog.image %>" alt="blog-image" />
+              <a href="blog/<%=blog._id%>">
+                <img src="/public/images<%=blog.image%>" alt="blog-image" />
                 <div class="texts-area">
                   <h2><%= blog.title %></h2>
                   <p><%= blog.summary %></p>
                 </div>
               </a>
             </div>
-            <% }) %>
+          <% }) %>
         </div>
         
         <div class="bottom">
