@@ -17,7 +17,9 @@ app.use(session({
 }))
 
 // Connecting to MongoDB
-mongoose.connect("mongodb+srv://tnkstr:c0untzer0-md@cluster0.kgaxe.mongodb.net/blogUserDatabase?retryWrites=true&w=majority")
+const MONGO_URL = process.env.MONGO_URL;
+//mongoose.connect("mongodb+srv://tnkstr:c0untzer0-md@cluster0.kgaxe.mongodb.net/blogUserDatabase?retryWrites=true&w=majority")
+mongoose.connect(MONGO_URL)
     .then(() => {
         console.log("Success: Connected to MongoDB")
     })
