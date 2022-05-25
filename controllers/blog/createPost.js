@@ -1,11 +1,10 @@
 const BlogModel = require("../../models/blog");
 
 module.exports = (req, res) => {
-  // req.body.createDate = today.toISOString();
+  //投稿日時をセット
   const now = new Date();
-  console.log(now.toISOString());
   req.body.createDate = now.toISOString();
-  // req.body.createDate = "2022-07-01T10:00:00.000+00:00";
+  console.log(req.body);
   BlogModel.create(req.body, (error, savedBlogData) => {
     if (error) {
       res.render("error", { message: "/blog/createのエラー" });

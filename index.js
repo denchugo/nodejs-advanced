@@ -8,6 +8,9 @@ const routers = require("./routes")
 app.set("view engine", "ejs")
 app.use("/public", express.static("public"))
 
+// const multer = require('multer')
+// const upload = multer({dest: 'images/'})
+
 // Session
 app.use(session({
     secret: "secretKey",
@@ -39,3 +42,5 @@ const port = process.env.PORT || 5000
 app.listen(port, () => {
     console.log(`Listening on ${port}`)
 })
+
+// module.exports = upload;

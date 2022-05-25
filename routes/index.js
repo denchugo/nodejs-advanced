@@ -1,5 +1,9 @@
 const express = require("express")
+// const upload = require("..")
 const router = express.Router()
+const multer = require('multer')
+const upload = multer({dest: 'images/'})
+
 
 const allBlogs = require("../controllers/blog/allBlogs")
 const createGet = require("../controllers/blog/createGet")
@@ -16,7 +20,8 @@ const registerPost = require("../controllers/user/registerPost")
 
 router.get("/", allBlogs)
 router.get("/blog/create", createGet)
-router.post("/blog/create", createPost)
+router.post("/blog/create", upload.single('file'), createPost)
+// router.post("/blog/create", createPost)
 router.get("/blog/delete/:id", deleteGet)
 router.post("/blog/delete/:id", deletePost)
 router.get("/blog/:id", singleBlog)
