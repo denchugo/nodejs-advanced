@@ -9,13 +9,15 @@
   <body>
     <%- include("./header"); %>
     <main>
-      <form action="/blog/update/<%=singleBlog._id%>" method="POST">
+      <form action="/blog/update/<%=singleBlog._id%>" method="POST" enctype="multipart/form-data">
         <label for="title">タイトル</label>
         <input type="text" name="title" value="<%=singleBlog.title%>">
         <label for="summary">要約</label>
         <input type="text" name="summary" value="<%=singleBlog.summary%>">
-        <label for="image">イメージ</label>
-        <input type="text" name="image" value="<%=singleBlog.image%>">
+        <label for="file">画像</label>
+        <input type="file" name="file">
+        <!-- <label for="image">イメージ</label>
+        <input type="text" name="image" value="<%=singleBlog.image%>"> -->
         <label for="textBody">本文</label>
         <textarea name="textBody" row="15"><%=singleBlog.textBody%></textarea>
         <br />
